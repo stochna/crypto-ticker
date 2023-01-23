@@ -93,8 +93,9 @@ h1 {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-family: orbitron-semibold, sans-serif;
+  word-break: keep-all;
 
   z-index: 1000;
 }
