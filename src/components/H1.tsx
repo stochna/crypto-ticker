@@ -8,11 +8,11 @@ const H1 = () => {
 
     gsap.to("#h1", {
       duration: 1,
-      delay: 5,
+      delay: 4,
       text: {
         value: "Use Crypto Ticker"
-    },
-    })
+      }
+    });
   });
 
   return (
