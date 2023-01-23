@@ -6,6 +6,11 @@
   width: 100%;
   color: var(--bs-light);
   position: relative;
+
+  & > *:not(.bg) {
+    position: relative;
+    z-index: 1000;
+  }
 }
 
 .bg {
