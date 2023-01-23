@@ -10,14 +10,14 @@ const H1 = () => {
       duration: 1,
       delay: 4,
       text: {
-        value: "Use Crypto Ticker"
+        value: "Start using <br/> Crypto Ticker"
       }
     });
   });
 
   return (
-    <div className="header">
-      <h1 id="h1">Get cryptocurrency real-time prices</h1>
+    <div className="col-md-7 col">
+      <h1 id="h1">Get crypto <br/> real-time prices</h1>
     </div>
   )
 };
