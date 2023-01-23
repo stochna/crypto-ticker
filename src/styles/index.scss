@@ -7,9 +7,14 @@
   color: var(--bs-light);
   position: relative;
 
-  & > *:not(.bg) {
+  .header,
+  .content {
     position: relative;
     z-index: 1000;
+
+    &:not(:last-child) {
+      transform: translateY(50%);
+    }
   }
 }
 
