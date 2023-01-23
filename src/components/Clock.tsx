@@ -13,7 +13,7 @@ const Clock = () => {
   useTimer();
 
   return (
-    <div className="col-md-2 col d-flex gap-4">
+    <div className="col-md-2 col d-flex gap-4 mt-3">
       <h3> { date.toUTCString() } </h3>
     </div>
   )
