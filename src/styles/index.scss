@@ -6,58 +6,80 @@
   width: 100%;
   color: var(--bs-light);
   position: relative;
+}
 
-  background:
-    radial-gradient(
-      circle at 0 10%,
-      #5FB35B,
-      rgba(0, 0, 0, 0) 40%
-    ),
-    radial-gradient(
-      circle at 50% -10%,
-      #7f94da,
-      rgba(0, 0, 0, 0) 30%
-    );
-  background-size: 200%;
+.bg {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
+  &.bg-1 {
+    background:
+      radial-gradient(
+        circle at 0 10%,
+        #0c1b36,
+        rgba(74, 102, 196, 0) 60%
+      ),
+      radial-gradient(
+        circle at 50% -10%,
+        #7f94da,
+        rgba(0, 0, 0, 0) 50%
+      ),
+      radial-gradient(
+        circle at 20% 110%,
+        #0c1b36,
+        rgba(0, 0, 0, 0) 60%
+      );
+  
+    background-size: 200% 200%;
+    background-position: 0% 0%;
   }
 
-  &::before {
+  &.bg-2 {
     background:
-    radial-gradient(
-      circle at 80% 40%,
-      #5FB35B,
-      rgba(0, 0, 0, 0) 40%
-    ),
-    radial-gradient(
-      circle at 20% -20%,
-      #0c1b36,
-      rgba(0, 0, 0, 0) 60%
-    ),
-    radial-gradient(
-      circle at 50% 0%,
-      #695CF6,
-      rgba(0, 0, 0, 0) 40%
-    ),
-    radial-gradient(
-      circle at 40% 0,
-      #5FB35B,
-      rgba(0, 0, 0, 0) 30%
-    );
-    
-    background-size: 200%;
+      radial-gradient(
+        circle at 80% 40%,
+        #3a1cc2,
+        rgba(0, 0, 0, 0) 60%
+      ),
+      radial-gradient(
+        circle at 120% 80%,
+        #0c1b36,
+        rgba(0, 0, 0, 0) 70%
+      ),
+      radial-gradient(
+        circle at 50% 0%,
+        #695CF6,
+        rgba(0, 0, 0, 0) 60%
+      );
+
+    background-size: 200% 200%;
+    background-position: 100% 100%;
     background-blend-mode: overlay;
   }
 
-  &::after {
+  &.bg-3 {
+    background:
+      radial-gradient(
+        circle at 20% -20%,
+        #0c1b36,
+        rgba(0, 0, 0, 0) 70%
+      ),
+      radial-gradient(
+        circle at 40% 0,
+        #450f55,
+        rgba(0, 0, 0, 0) 60%
+      );
+
+    background-size: 200% 200%;
+    background-position: 100% 100%;
+    background-blend-mode: overlay;
+  }
+
+  &.bg-noise {
     background-image: url("/src/assets/noise-texture.jpg");
     background-repeat: repeat;
     background-size: 10%;
