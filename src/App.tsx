@@ -5,7 +5,11 @@ const App = () => {
   return (
     <div className="app bg-dark">
       <GsapBg />
-      <H1 />
+
+      <div className="container py-4">
+        <H1 />
+      </div>
+
     </div>
   );
 }

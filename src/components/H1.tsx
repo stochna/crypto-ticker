@@ -16,7 +16,9 @@ const H1 = () => {
   });
 
   return (
-    <h1 id="h1">Get cryptocurrency real-time prices</h1>
+    <div className="header">
+      <h1 id="h1">Get cryptocurrency real-time prices</h1>
+    </div>
   )
 };
 
