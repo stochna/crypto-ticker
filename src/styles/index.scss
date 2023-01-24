@@ -34,8 +34,8 @@
       ),
       radial-gradient(
         circle at 50% -10%,
-        #7f94da,
-        rgba(0, 0, 0, 0) 50%
+        #6e87d8,
+        rgba(0, 0, 0, 0) 40%
       ),
       radial-gradient(
         circle at 20% 110%,
@@ -105,5 +105,6 @@ h1 {
   word-break: keep-all;
 }
 
-  margin-left: 15vmin;
+.currency-list {
+  min-height: 100vh;
 }
