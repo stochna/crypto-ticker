@@ -20,7 +20,7 @@ const H1 = () => {
       yPercent: -100,
       scrollTrigger: {
         trigger: ".app",
-        start: "top +=100px",
+        start: "top +=10px",
         scrub: true
       }
     });
