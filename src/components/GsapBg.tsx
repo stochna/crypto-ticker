@@ -4,7 +4,7 @@ import gsap from "gsap";
 const GsapBg = () => {
   React.useLayoutEffect(() => {
     const defaultVars = {
-      duration: 20,
+      duration: 15,
       repeat: -1,
       yoyo: true
     };
