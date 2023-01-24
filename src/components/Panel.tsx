@@ -45,9 +45,17 @@ const Panel = () => {
   }, []);
 
   return (
-    <div className="row panel">
-      <div className="col">
+    <div className="row justify-content-end panel">
+      <div className="col-9">
         <div className="ps-0 currencies">
+          <>
+            <div></div>
+            <div>Price</div>
+            <div>Low 24h</div>
+            <div>High 24h</div>
+            <div>Vol 24h</div>
+            <div>Vol 30d</div>
+          </>
           {
             currencyData.map(d => <Currency {...d} />)
           }
