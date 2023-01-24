@@ -32,10 +32,11 @@ const Panel = () => {
   React.useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    const showList = () => gsap.to(".currency-list", {
-      yPercent: -50,
+    const showList = () => gsap.to(".panel", {
+      yPercent: -300,
       scrollTrigger: {
-        trigger: ".currency-list",
+        trigger: ".panel",
+        start: "top bottom",
         scrub: true
       }
     });
