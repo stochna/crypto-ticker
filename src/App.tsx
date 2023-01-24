@@ -1,7 +1,7 @@
 import GsapBg from "./components/GsapBg";
 import H1 from "./components/H1";
 import Clock from "./components/Clock";
-import CurrencyList from "./components/CurrencyList";
+import Panel from "./components/Panel";
 
 const App = () => {
   return (
@@ -14,7 +14,7 @@ const App = () => {
       </div>
 
       <div className="container content">
-        <CurrencyList />
+        <Panel />
       </div>
 
     </div>

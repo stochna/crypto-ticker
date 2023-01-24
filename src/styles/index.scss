@@ -105,14 +105,17 @@ h1 {
   word-break: keep-all;
 }
 
-.currency-list {
- // min-height: 60vh;
+.panel {
+ width: 60vw;
 
-  .list {
-    list-style-type: none;    
+  .currencies {
   }
-  .list-item {
+  .currency {
     padding: 1rem 2rem;
+    display: flex;
+    flex-shrink: 0;
+    gap: 2rem;
+    align-content: space-between;
 
     &:not(:last-child) {
       border-bottom: 1px solid #F8F8F8;

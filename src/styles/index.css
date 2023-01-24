@@ -60,12 +60,16 @@ h1 {
   word-break: keep-all;
 }
 
-.currency-list .list {
-  list-style-type: none;
+.panel {
+  width: 60vw;
 }
-.currency-list .list-item {
+.panel .currency {
   padding: 1rem 2rem;
+  display: flex;
+  flex-shrink: 0;
+  gap: 2rem;
+  align-content: space-between;
 }
-.currency-list .list-item:not(:last-child) {
+.panel .currency:not(:last-child) {
   border-bottom: 1px solid #F8F8F8;
 }
