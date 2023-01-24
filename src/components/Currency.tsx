@@ -11,14 +11,14 @@ const Currency = (props: ICurrencyData) => {
   } = props;
 
   return (
-    <div key={product_id} className="currency">
+    <>
       <div>{product_id}</div>
       <div>{price}</div>
       <div>{low_24h}</div>
       <div>{high_24h}</div>
       <div>{volume_24h}</div>
       <div>{volume_30d}</div>
-    </div>
+    </>
   )
 };
 
