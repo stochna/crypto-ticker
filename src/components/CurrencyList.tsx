@@ -7,7 +7,7 @@ const CurrencyList = () => {
     gsap.registerPlugin(ScrollTrigger);
 
     const showList = () => gsap.to(".currency-list", {
-      yPercent: -25,
+      yPercent: -50,
       scrollTrigger: {
         trigger: ".currency-list",
         scrub: true
@@ -20,7 +20,7 @@ const CurrencyList = () => {
   return (
     <div className="row currency-list">
       <div className="col">
-        <ul className="list">
+        <ul className="ps-0 list">
           <li className="list-item">A first item</li>
           <li className="list-item">A second item</li>
           <li className="list-item">A third item</li>

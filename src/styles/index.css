@@ -60,6 +60,12 @@ h1 {
   word-break: keep-all;
 }
 
-.currency-list {
-  min-height: 100vh;
+.currency-list .list {
+  list-style-type: none;
+}
+.currency-list .list-item {
+  padding: 1rem 2rem;
+}
+.currency-list .list-item:not(:last-child) {
+  border-bottom: 1px solid #F8F8F8;
 }
