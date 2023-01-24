@@ -4,12 +4,18 @@
   src: local("Orbitron-SemiBold"), url("../assets/Orbitron-SemiBold.ttf") format("truetype"), url("../assets/Orbitron-SemiBold.woff") format("woff");
   font-weight: 600;
 }
+@font-face {
+  font-family: "robotomono-regular";
+  src: local("SpaceGrotesk-Medium"), url("../assets/RobotoMono-Regular.ttf") format("truetype"), url("../assets/RobotoMono-Regular.woff") format("woff");
+  font-weight: 400;
+}
 .app {
   min-height: 100vh;
   width: 100%;
   color: var(--bs-light);
   position: relative;
   padding-top: 1rem;
+  font-family: robotomono-light, sans-serif;
 }
 .app .header,
 .app .content {
@@ -60,16 +66,21 @@ h1 {
   word-break: keep-all;
 }
 
-.panel {
-  width: 60vw;
+.currencies {
+  display: grid;
+  grid-template-columns: -webkit-max-content repeat(3, minmax(-webkit-max-content, 1fr)) repeat(2, minmax(-webkit-max-content, 2fr));
+  grid-template-columns: max-content repeat(3, minmax(max-content, 1fr)) repeat(2, minmax(max-content, 2fr));
+  grid-auto-rows: -webkit-max-content;
+  grid-auto-rows: max-content;
 }
-.panel .currency {
-  padding: 1rem 2rem;
-  display: flex;
-  flex-shrink: 0;
-  gap: 2rem;
-  align-content: space-between;
-}
-.panel .currency:not(:last-child) {
+.currencies > * {
+  padding: 1rem 1.8rem;
   border-bottom: 1px solid #F8F8F8;
+}
+.currencies > *:nth-child(-n+6) {
+  font-size: 0.8rem;
+  text-transform: capitalize;
+}
+.currencies > *:nth-last-child(-n+6) {
+  border-bottom: none;
 }

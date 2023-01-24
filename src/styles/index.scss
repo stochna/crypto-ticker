@@ -7,6 +7,7 @@
   color: var(--bs-light);
   position: relative;
   padding-top: 1rem;
+  font-family: robotomono-light, sans-serif;
 
   .header,
   .content {
@@ -105,20 +106,20 @@ h1 {
   word-break: keep-all;
 }
 
-.panel {
- width: 60vw;
+.currencies {
+  display: grid;
+  grid-template-columns: max-content repeat(3, minmax(max-content, 1fr)) repeat(2, minmax(max-content, 2fr));
+  grid-auto-rows: max-content;
 
-  .currencies {
+  & > * {
+    padding: 1rem 1.8rem;
+    border-bottom: 1px solid #F8F8F8;
   }
-  .currency {
-    padding: 1rem 2rem;
-    display: flex;
-    flex-shrink: 0;
-    gap: 2rem;
-    align-content: space-between;
-
-    &:not(:last-child) {
-      border-bottom: 1px solid #F8F8F8;
-    }
+  & > *:nth-child(-n+6) {
+    font-size: .8rem;
+    text-transform: capitalize;
+  }
+  & > *:nth-last-child(-n+6) {
+    border-bottom: none;
   }
 }
