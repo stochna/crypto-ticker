@@ -1,32 +1,33 @@
 import React from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { ICurrencyData } from '../interfaces';
+import { ICurrencyData, UseCurrencyTicker } from '../interfaces';
 import Currency from "./Currency";
 
 const Panel = () => {
-  const ep = "wss://ws-feed.exchange.coinbase.com";
-  const ws = React.useRef(new WebSocket(ep)).current;
+  const currenciesList = [
+    "BTC-USD",
+    "ETH-USD"
+  ];
 
-  const [currencyData, setCurrencyData] = React.useState<ICurrencyData[]>([]);
-
-  const subscribeBTC = {
-    "type": "subscribe",
-    "product_ids": [
-      "BTC-USD"
-    ],
-    "channels": ["ticker"]
-  };
-
-  ws.onopen = () => {
-    ws.send(JSON.stringify(subscribeBTC));
-  };
-
-  ws.onmessage = e => {
-    const json = JSON.parse(e.data);
-    console.log(json);
-    if (json.type !== "ticker") return;
-    setCurrencyData([json]);
+  const useCurrencyTicker : UseCurrencyTicker = (ws, currency_id, saveNewData) => {
+    React.useEffect(() => {
+      const subscribe = {
+        "type": "subscribe",
+        "product_ids": [currency_id],
+        "channels": ["ticker"]
+      };
+  
+      ws.addEventListener("open", () => {
+        ws.send(JSON.stringify(subscribe));
+      });
+  
+      ws.addEventListener("message", (e) => {
+        const json : ICurrencyData = JSON.parse(e.data);
+        if (json.type !== "ticker") return;
+        saveNewData(json);
+      });
+    }, []);
   };
 
   React.useLayoutEffect(() => {
@@ -57,7 +58,7 @@ const Panel = () => {
             <div>Vol 30d</div>
           </>
           {
-            currencyData.map(d => <Currency {...d} />)
+            currenciesList.map(id => <Currency currency_id={id} useCurrencyTicker={useCurrencyTicker} />)
           }
         </div>
       </div>
