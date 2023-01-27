@@ -1,3 +1,9 @@
+type UseCurrencyTicker = (
+  ws: WebSocket,
+  currency_id: string,
+  saveNewData: React.Dispatch<React.SetStateAction<ICurrencyData | null>>
+) => void;
+
 interface ICurrencyData {
   type: string,
   sequence: number,
@@ -18,6 +24,13 @@ interface ICurrencyData {
   last_size: string
 };
 
+interface ICurrencyProps {
+  currency_id: string,
+  useCurrencyTicker: UseCurrencyTicker
+}
+
 export {
-  ICurrencyData
+  UseCurrencyTicker,
+  ICurrencyData,
+  ICurrencyProps
 };
