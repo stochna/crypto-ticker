@@ -8,6 +8,7 @@
   position: relative;
   padding-top: 1rem;
   font-family: robotomono-regular, sans-serif;
+  font-size: .8rem;
 
   .header,
   .content {
@@ -107,12 +108,13 @@ h1 {
 }
 
 .currencies {
+  width: max-content;
   display: grid;
-  grid-template-columns: max-content repeat(3, minmax(max-content, 1fr)) repeat(2, minmax(max-content, 2fr));
+  grid-template-columns: max-content repeat(3, 1fr) repeat(2, 1.5fr);
   grid-auto-rows: max-content;
 
   & > * {
-    padding: 1rem 1.8rem;
+    padding: 1rem 3vmin;
     border-bottom: 1px solid #F8F8F8;
   }
   & > *:nth-child(-n+6) {

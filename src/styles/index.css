@@ -16,6 +16,7 @@
   position: relative;
   padding-top: 1rem;
   font-family: robotomono-regular, sans-serif;
+  font-size: 0.8rem;
 }
 .app .header,
 .app .content {
@@ -67,14 +68,17 @@ h1 {
 }
 
 .currencies {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   display: grid;
-  grid-template-columns: -webkit-max-content repeat(3, minmax(-webkit-max-content, 1fr)) repeat(2, minmax(-webkit-max-content, 2fr));
-  grid-template-columns: max-content repeat(3, minmax(max-content, 1fr)) repeat(2, minmax(max-content, 2fr));
+  grid-template-columns: -webkit-max-content repeat(3, 1fr) repeat(2, 1.5fr);
+  grid-template-columns: max-content repeat(3, 1fr) repeat(2, 1.5fr);
   grid-auto-rows: -webkit-max-content;
   grid-auto-rows: max-content;
 }
 .currencies > * {
-  padding: 1rem 1.8rem;
+  padding: 1rem 3vmin;
   border-bottom: 1px solid #F8F8F8;
 }
 .currencies > *:nth-child(-n+6) {
