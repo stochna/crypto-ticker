@@ -5,6 +5,7 @@ type UseCurrencyTicker = (
 ) => void;
 
 interface ICurrencyData {
+  [key: string]: string | number;
   type: string,
   sequence: number,
   product_id: string,
