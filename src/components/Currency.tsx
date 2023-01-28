@@ -1,4 +1,5 @@
 import React from "react";
+import Loader from "./Loader";
 import { ICurrencyData, ICurrencyProps } from '../interfaces';
 
 const Currency = (props: ICurrencyProps) => {
@@ -8,18 +9,27 @@ const Currency = (props: ICurrencyProps) => {
 
   props.useCurrencyTicker(ws, props.currency_id, setData);
 
+  const displayedDataItems = [
+    "product_id",
+    "price",
+    "low_24h",
+    "high_24h",
+    "volume_24h",
+    "volume_30d"
+  ];
+
   return (
-    data ?
     <>
-      <div>{data.product_id}</div>
-      <div>{data.price}</div>
-      <div>{data.low_24h}</div>
-      <div>{data.high_24h}</div>
-      <div>{data.volume_24h}</div>
-      <div>{data.volume_30d}</div>
+      {
+        displayedDataItems.map(item => (
+          <div>
+            {
+              !data ? <Loader /> : data[item]
+            }
+          </div>
+        ))
+      }
     </>
-    :
-    <div></div>
   )
 };
 
