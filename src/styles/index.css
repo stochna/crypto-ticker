@@ -80,6 +80,7 @@ h1 {
 .currencies > * {
   padding: 1rem 3vmin;
   border-bottom: 1px solid #F8F8F8;
+  text-align: center;
 }
 .currencies > *:nth-child(-n+6) {
   font-size: 0.8rem;
