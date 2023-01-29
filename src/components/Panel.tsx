@@ -7,7 +7,13 @@ import Currency from "./Currency";
 const Panel = () => {
   const currenciesList = [
     "BTC-USD",
-    "ETH-USD"
+    "ETH-USD",
+    "LTC-USD",
+    "LTC-USD",
+    "AAVE-USD",
+    "SOL-USD",
+    "AVAX-USD",
+    "APT-USD"
   ];
 
   const useCurrencyTicker : UseCurrencyTicker = (ws, currency_id, saveNewData) => {
