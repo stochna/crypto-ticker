@@ -58,10 +58,10 @@ const Panel = () => {
           <>
             <div></div>
             <div>Price</div>
-            <div>Low 24h</div>
-            <div>High 24h</div>
-            <div>Vol 24h</div>
-            <div>Vol 30d</div>
+            <div>Low</div>
+            <div>High</div>
+            <div>Volume 24h</div>
+            <div>Volume 30d</div>
           </>
           {
             currenciesList.map(id => <Currency currency_id={id} useCurrencyTicker={useCurrencyTicker} />)
