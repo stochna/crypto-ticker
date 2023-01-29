@@ -108,7 +108,6 @@ h1 {
 }
 
 .currencies {
-  width: max-content;
   display: grid;
   grid-template-columns: max-content repeat(3, 1fr) repeat(2, 1.5fr);
   grid-auto-rows: max-content;
@@ -119,7 +118,7 @@ h1 {
     text-align: center;
   }
   & > *:nth-child(-n+6) {
-    font-size: .8rem;
+    font-size: .7rem;
     text-transform: capitalize;
   }
   & > *:nth-last-child(-n+6) {
