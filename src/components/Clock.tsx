@@ -1,4 +1,6 @@
 import React from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 const Clock = () => {
   const [date, setDate] = React.useState(new Date());
@@ -10,10 +12,21 @@ const Clock = () => {
     }, []);
   };
 
+  React.useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to("#clock", {
+      yPercent: -500,
+      scrollTrigger: {
+        scrub: true
+      }
+    })
+  }, []);
+
   useTimer();
 
   return (
-    <div className="col-md-2 col d-flex gap-4 mt-3">
+    <div id="clock" className="col-md-2 col mt-3">
       <h3> { date.toUTCString() } </h3>
     </div>
   )
