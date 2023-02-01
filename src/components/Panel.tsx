@@ -9,7 +9,6 @@ const Panel = () => {
     "BTC-USD",
     "ETH-USD",
     "LTC-USD",
-    "LTC-USD",
     "AAVE-USD",
     "SOL-USD",
     "AVAX-USD",
@@ -39,22 +38,35 @@ const Panel = () => {
   React.useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    const showList = () => gsap.to(".panel", {
-      yPercent: -300,
+    gsap.to(".panel", {
+      yPercent: -100,
       scrollTrigger: {
         trigger: ".panel",
         start: "top bottom",
+  //      pin: true,
+   //     end: "top -10%",
         scrub: true
       }
     });
 
-    showList();
+    gsap.to(".panel", {
+      scrollTrigger: {
+        trigger: ".panel",
+        start: "top 0",
+        pin: ".currencies",
+        end: "bottom top",
+        scrub: true,
+        pinSpacing: false
+      }
+    });
+
+    
   }, []);
 
   return (
-    <div className="row justify-content-end panel">
-      <div className="col-9">
-        <div className="ps-0 currencies">
+    <div className="row panel">
+      <div className="col">
+        <div className="px-4 py-3 currencies">
           <>
             <div></div>
             <div>Price</div>
@@ -64,7 +76,7 @@ const Panel = () => {
             <div>Volume 30d</div>
           </>
           {
-            currenciesList.map(id => <Currency currency_id={id} useCurrencyTicker={useCurrencyTicker} />)
+            currenciesList.map(id => <Currency key={id} currency_id={id} useCurrencyTicker={useCurrencyTicker} />)
           }
         </div>
       </div>
