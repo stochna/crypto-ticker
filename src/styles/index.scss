@@ -12,10 +12,12 @@
 
   .header,
   .content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: relative;
     z-index: 1000;
-    margin-top: 50vh;
-    transform: translateY(-50%);
   }
 }
 
@@ -109,8 +111,10 @@ h1 {
 
 .currencies {
   display: grid;
-  grid-template-columns: max-content repeat(3, 1fr) repeat(2, 1.5fr);
+  grid-template-columns: repeat(4, 1fr) repeat(2, 1.5fr);
   grid-auto-rows: max-content;
+  position: relative;
+ // color: #1E1E1E;
 
   & > * {
     padding: 1rem 3vmin;
@@ -123,5 +127,18 @@ h1 {
   }
   & > *:nth-last-child(-n+6) {
     border-bottom: none;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, .4);
+    backdrop-filter: blur(5px);
+    border-radius: 2rem;
+    z-index: -1;
   }
 }
