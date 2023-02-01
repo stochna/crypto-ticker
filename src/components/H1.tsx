@@ -17,7 +17,7 @@ const H1 = () => {
     });
 
     gsap.to("#h1", {
-      yPercent: -100,
+      yPercent: -200,
       scrollTrigger: {
         trigger: ".app",
         start: "top +=10px",
